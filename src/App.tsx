@@ -22,6 +22,27 @@ function Users() {
   return <h2>Users</h2>;
 }
 
+function Dashboard() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.tsx</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
+
 function App() {
   // return (
   //   <div className="App">
@@ -45,22 +66,6 @@ function App() {
   return (
     <BrowserRouter>
       <div>
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-              Edit <code>src/App.tsx</code> and save to reload.
-            </p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-          </header>
-        </div>
         <nav>
             <ul>
               <li>
@@ -72,12 +77,16 @@ function App() {
               <li>
                 <Link to="/users">Users</Link>
               </li>
+              <li>
+                <Link to="/dashboard">Dashboard</Link>
+              </li>
             </ul>
           </nav>
 
         <Routes>
           <Route path='/about' element={<About/>} />
           <Route path="/users" element={<Users />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/" element={<Home />} />
 
         </Routes>
